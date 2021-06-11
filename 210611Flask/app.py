@@ -7,16 +7,16 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('leerequest.html')
+    return render_template('request.html')
 
 
-@app.route('/login', methods=['post'])
+@app.route("/login", methods=["post"])
 def login():
 
     id = request.form.get('id')
     info = {"name":"이재선", "age":30, "생년월일":971203}
 
-    return render_template('response.html', userinfo=info)
+    return render_template('response.html', idencore=id, userinfo=info)
 
 
 
