@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    
+</head>
+<body>
+    <script>
+        function myfun(){
+            v1 = 1;         //전역변수로 선언, 다른영역에서도 호출가능
+            var v2 = 2;     // 로컬변수로 이 함수외 호출 불가
+            let v3 = "3";   // 로컬변수로 이 함수외 호출 불가
+            const v4 = 4;      // 로컬변수로 이 함수외 호출 불가
+            
+            console.log(v1);
+            console.log(v2);
+            console.log(v3);
+            console.log(v4);      
+
+        }
+        myfun()
+    
+        
+        function myfun2(){
+
+            console.log(v1)     //전역변수 이니깐 호출가능
+            console.log(v2);    //로컬변수라 호출안댐 
+            console.log(v3);    //로컬변수라 호출안댐 
+            console.log(v4);    //로컬변수라 호출안댐 
+        }
+        myfun2()
+    </script>
+
+</body>
+
+</html>
+
+
+<!--
+
+학습내용
+1. 사용자 정의 단순 함수구현 문법
+2. var / let / const 키워드 구분 
+    let/const는 선언된 block scope 내에서만 사용 가능한 견고한 키워드
+    const : 상수 의미
+    구글은 수정가능성이 없는 변수들은 const 사용 권장, 브라우저에서 실행되는 속도가 빠르다고 함
+
+-->
