@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- 
+    div에 데이터(text or html tag 구조)를 동적으로 입출력
+        1. div tag에 데이터 표현시 innerText - 무조건 문자열로 처리
+        2. innerHTML - tag 형식의 문자열은 tag로 처리  -->
+
+
+    <h3>미이션</h3>
+    <div id="div3"></div>
+    <div id="div4"></div>
+    <button onclick="div3print()">이름고르기!</button>
+    <br><br><br><br>
+    <button onclick="div4print()">할일!</button>
+
+
+<script>
+    function div3print() {
+
+        document.getElementById("div3").innerHTML =
+        `<form>
+            <input type="radio" id="male" name="gender" value="이재선">
+            <label for="jasun">이재선</label><br>
+
+            <input type="radio" id="female" name="gender" value="반재광">
+            <label for="반재광">반재광</label><br>
+
+            <input type="radio" id="other" name="gender" value="정주영">
+            <label for="정주영">정주영</label>
+        </form>`;
+
+    };
+
+    function div4print(){
+        document.getElementById("div4").innerHTML =
+        `<form action="/action_page.php">
+            <textarea name="message" rows="10" cols="30">미션하면서 할일적기!</textarea>
+            <br><br>
+            <input type="submit">
+        </form>`;
+    };
+</script>
+</body>
+</html>
