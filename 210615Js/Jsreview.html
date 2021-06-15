@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    아이디 : <input type="text" id="pid"> <br>
+    <!-- input 태그에 타입은 text타입이고 id는 pid -->
+    이름 : <input type="text" id="pname"> <br>
+    <!-- input태그사용하고 타입은 텍스트 id는 paname -->
+    <br>
+    <button value="1" onclick="print_data(this.value)">1</button>
+     <!--버튼태그를 사용하고 초기 사용값은 1로 지정함 1번클릭하면 print_data함수의 벨류값을
+    받음  -->
+    <button value="2" onclick="print_data(this.value)">2</button> 
+    <button value="3" onclick="print_data(this.value)">3</button> 
+    <button value="4" onclick="print_data(this.value)">4</button>
+
+    <script>
+
+    
+    
+        // 응용 step01 단계
+        function print_data(no){
+            // print_data함수정의 변수값은 no
+            document.getElementById("pid").value = person_all['p'+no].id; //person_all['p1'].id
+            // html전체문서에서 id가 pid라는 놈을 찾고 value 속성이 유요한경우에 사용할거야
+            // 
+            document.getElementById("pname").value = person_all['p'+no].name;
+        }
+
+        let person_all = {
+            "p1": {
+                "name": "John",
+                "id": 5566
+            },
+            "p2": {
+                "name": "재석",
+                "id": 12
+            },
+            "p3": {
+                "name": "종원",
+                "id": 13
+            },
+            "p4": {
+                "name": "영자",
+                "id": 15
+            }
+        };
+        // let v = 'p'+'2';  // key를 문자열로 가공
+        // alert(v);
+        // console.log(person_all[v]);  //문자열인 key를 사용하는 브랫킷 연산자
+    
+    </script>
+</body>
+</html>
