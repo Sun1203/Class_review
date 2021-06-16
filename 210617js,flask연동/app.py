@@ -1,5 +1,5 @@
 from flask import Flask, request, render_template
-# from dao import EmpDAO
+from dao import EmpDAO
 
 # Flask 인스턴스 생성
 app = Flask(__name__)
@@ -28,6 +28,15 @@ def getdata():      # 함수이름 : getdata()
     # 함수가 정상적으로 실행되면 JOSN형식으로 리턴값줌
     return '{"name":"재석", "age":49}'
 
+@app.route("/getemp", methods=['post'])
+def datemp():
+    empno = request.form.get("empno")
+    # client가 전송하는 데이터 흭득
+    
+    dao = EmpDAO()      # empone() 메소드를 보유한 객체 생성
+    data = dao.empone(empno)    # select 후에 json 포멧의 문자열로 가공해서 반환하는 메소드 호출
+
+    return data
 
 
 
